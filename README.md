@@ -40,10 +40,10 @@ Component | Type | State | Props | Description
 ------------ | ------------- | ------------ | ------------- | ------------ |
 Header | Functional | No | No | Contains Navigation and Logo. |
 Navigation | Functional | No | No | Contains Links: About, Login, Register, Add |
-About | Functional | No | Props | Contains description of app. |
-UserLanding | Class | Yes | Props | Contains cards of specific locations.  Header personally asking user "Where to?" and addressing their name. |
+About | Functional | No | Yes | Contains description of app. |
+UserLanding | Class | Yes | Yes | Contains cards of specific locations.  Header personally asking user "Where to?" and addressing their name. |
 LocationCreate | Class | Yes | Yes | Contains form to add a new location.  When done, redirects to UserLanding component. |
-LocationDetail | Functional | No | Props | Contains 3 cards of specified location and edit button. |
+LocationDetail | Functional | No | Yes | Contains 3 cards of specified location and edit button. |
 LocationEdit | Class | Yes | Yes | Contains form to edit specific details of location desired. |
 Login | Class | Yes | Yes | Contains Login Form. |
 Register | Class | Yes | No | Contains Register Form. |
