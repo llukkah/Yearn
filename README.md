@@ -5,16 +5,16 @@
 
 It is the only to-do list that matters.
 
-**Core Features / Goals**
+**Core Features / Goals**  
 Each user has the ability to create, update or delete the locations of their desire and take this list with them to stay organized, stay motivated, and most importantly, stay wandering.
 
-### MVP 
-#### Client Front End
-Frontend - React
+## MVP 
+#### Client (Front End)
+Frontend - React  
 Frontend Deployment - Surge / Netlify
 
-**WireFrame Images**
-Desktop & Tablet Renderings are the Same
+**WireFrame Images**   
+Desktop & Tablet Renderings are the same.   
 Refer to Wireframes Folder in this repository for a detailed view of each page's rendering.
 ![Wireframe Photo](./Wireframes/FullWireframe.png)
 
@@ -48,8 +48,8 @@ LocationEdit | Class | Yes | Yes | Contains form to edit specific details of loc
 Login | Class | Yes | Yes | Contains Login Form. |
 Register | Class | Yes | No | Contains Register Form. |
 
-#### Server Back End
-Backend - Ruby on Rails
+#### Server (Back End)
+Backend - Ruby on Rails  
 Backend Deployment - Heroku
 
 **ERD Model**
@@ -66,7 +66,7 @@ CORS | Render Front End |
 
 
 
-### Post MVP
+## Post MVP
 Once MVP is complete future features that would benefit this app and take it to the next level include but not limited to:
 
 - [ ] Packing List Model
