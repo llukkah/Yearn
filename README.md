@@ -58,19 +58,20 @@ Backend Deployment - Heroku
 ![ERD Model Photo](./ERDModel.png)
 
 **Data Heirarchy** - expected endpoints from API  
-/home  
-/about  
-/user/:id  
-/user/:id/create  
-/user/:id/:locationName  
-/user/:id/:locationName/edit  
+  /home  
+  /about  
+  /user/:id  
+  /user/:id/create  
+  /user/:id/:locationName  
+  /user/:id/:locationName/edit  
 
 **Dependancies**
 | Library | Purpose |
 | ------------ | ------------ |
-React | Render Front End |
-React Router | Render Front End |
-CORS | Render Front End |
+React | User interface rendering framework |
+React Router | Front End Link and Route components|
+CORS | CORS enabling middleware |
+Axios | Make front end API calls to backend |
 
 
 
