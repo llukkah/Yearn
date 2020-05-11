@@ -26,6 +26,7 @@ Refer to Wireframes Folder in this repository for a detailed view of each page's
     |__ Wireframes/
       |__ Wireframes.jsx
     |__ components/
+      |__ Home.jsx
       |__ Header.jsx
       |__ Navigation.jsx
       |__ About.jsx
@@ -38,6 +39,7 @@ Refer to Wireframes Folder in this repository for a detailed view of each page's
 **Component Breakdown**
 Component | Type | State | Props | Description
 ------------ | ------------- | ------------ | ------------- | ------------ |
+Home | Functional | No | No | Contains Hero text. |
 Header | Functional | No | No | Contains Navigation and Logo. |
 Navigation | Functional | No | No | Contains Links: About, Login, Register, Add |
 About | Functional | No | No | Contains description of app. |
