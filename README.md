@@ -77,7 +77,8 @@ Once MVP is complete future features that would benefit this app and take it to 
 
 - [ ] Comment Model
 - [ ] Packing List Model
-- [ ] Tags Model for specific locations  E.g. Action, Experience, Food Tour, Water, Wind, Earth, Mountain, Relax, Solo, Friends, etc.
+- [ ] Tags Model for specific locations  
+  E.g. Action, Experience, Food Tour, Water, Wind, Earth, Mountain, Relax, Solo, Friends, etc.
 - [ ] Search Bar to see locations, other users, or tags
 - [ ] Randomizer button link in Navigation Bar to display random location of another user & their bucketlist for that location for inspiration.  User's information will not be displayed; only location and bucketlist will be displayed  
 
