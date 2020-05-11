@@ -55,7 +55,13 @@ Backend Deployment - Heroku
 **ERD Model**
 ![ERD Model Photo](./ERDModel.png)
 
-**Data Heirarchy** - expected endpoints from API
+**Data Heirarchy** - expected endpoints from API  
+/home  
+/about  
+/user/:id  
+/user/:id/create  
+/user/:id/:locationName  
+/user/:id/:locationName/edit  
 
 **Dependancies**
 | Library | Purpose |
@@ -69,9 +75,15 @@ CORS | Render Front End |
 ## Post MVP
 Once MVP is complete future features that would benefit this app and take it to the next level include but not limited to:
 
-- [ ] Packing List Model
 - [ ] Comment Model
-- [ ] Search Bar to see locations, other users, or tags.
-- [ ] The functionality to contact other users via direct message
+- [ ] Packing List Model
 - [ ] Tags for specific locations
-- [ ] Randomizer button link in Navigation Bar to display random location of another user & their bucketlist for that location for inspiration.  User's information will not be displayed; only location and bucketlist will be displayed.
+- [ ] Search Bar to see locations, other users, or tags
+- [ ] Randomizer button link in Navigation Bar to display random location of another user & their bucketlist for that location for inspiration.  User's information will not be displayed; only location and bucketlist will be displayed  
+
+**To make the app more social:**
+- [ ] Give users the ability to post photos of their Saturday
+- [ ] Give users the ability to browse photos of other users' Saturday
+- [ ] The functionality to contact other users via direct message
+- [ ] The functionality to comment on other users' Saturday or bucketlist item/location
+
