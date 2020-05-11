@@ -16,7 +16,7 @@ Frontend Deployment - Surge / Netlify
 **WireFrame Images**   
 Desktop & Tablet Renderings are the same.   
 Refer to Wireframes Folder in this repository for a detailed view of each page's rendering.
-![Wireframe Photo](./Wireframes/FullWireframe.png)
+![Wireframe Photo](./Wireframes/HomeDesktop.png)
 
 **Component Heirarchy**
 
@@ -40,12 +40,12 @@ Component | Type | State | Props | Description
 ------------ | ------------- | ------------ | ------------- | ------------ |
 Header | Functional | No | No | Contains Navigation and Logo. |
 Navigation | Functional | No | No | Contains Links: About, Login, Register, Add |
-About | Functional | No | Yes | Contains description of app. |
-UserLanding | Class | Yes | Yes | Contains cards of specific locations.  Header personally asking user "Where to?" and addressing their name. |
-LocationCreate | Class | Yes | Yes | Contains form to add a new location.  When done, redirects to UserLanding component. |
+About | Functional | No | No | Contains description of app. |
+UserLanding | Class | No | Yes | Contains cards of specific locations.  Header personally asking user "Where to?" and addressing their name. |
+LocationCreate | Class | Yes | No | Contains form to add a new location.  When done, redirects to UserLanding component. |
 LocationDetail | Functional | No | Yes | Contains 3 cards of specified location and edit button. |
 LocationEdit | Class | Yes | Yes | Contains form to edit specific details of location desired. |
-Login | Class | Yes | Yes | Contains Login Form. |
+Login | Class | Yes | No | Contains Login Form. |
 Register | Class | Yes | No | Contains Register Form. |
 
 #### Server (Back End)
@@ -74,4 +74,4 @@ Once MVP is complete future features that would benefit this app and take it to 
 - [ ] Search Bar to see locations, other users, or tags.
 - [ ] The functionality to contact other users via direct message
 - [ ] Tags for specific locations
-- [ ] Randomizer button link in Navigation Bar to display random location of another user & their bucketlist for that location for inspiration.  User's information will no be displayed; only location and bucketlist will be displayed.
+- [ ] Randomizer button link in Navigation Bar to display random location of another user & their bucketlist for that location for inspiration.  User's information will not be displayed; only location and bucketlist will be displayed.
