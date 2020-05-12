@@ -19,10 +19,15 @@ export default class Login extends Component {
     return (
       <form onSubmit={(e) => {
         e.preventDefault();
-        this.props.handleLogin(this.state);
+        // this.props.handleLogin(this.state);
+        this.props.bullshit(this.state)
+
+
+
+
+        // this.props.readAllLocations();
         // debugger;
-        this.props.history.push('/users/:id/locations');
-        // this.props.history.push('/home');
+        this.props.history.push('/locations');
       }}>
         <h3>Login</h3>
         <label htmlFor="username">username:</label>

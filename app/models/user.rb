@@ -6,8 +6,8 @@ class User < ApplicationRecord
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
     validates :password, length: { minimum: 6 }
     
+    has_many :locations
     has_many :tasks, through: :locations
-    
     def return_data
         {
           id: id,

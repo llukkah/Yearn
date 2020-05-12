@@ -15,8 +15,8 @@ export default class Main extends Component {
   }
 
   componentDidMount() {
-    this.readAllLocations();
-    this.readAllTasks();
+    // this.readAllLocations();
+    // this.readAllTasks();
   }
   //======================================
   //============== Location ==============
@@ -89,52 +89,62 @@ export default class Main extends Component {
 //       })
 //     }))
 //   }
+bullshit = async (loginData) => {
+  const {locations, tasks} = this.props.handleLogin(loginData)
+  this.setState({locations, tasks})
+}
+
+
+
 
   render() {
+    debugger;
     return (
       <main>
         <Route path='/login' render={(props) => (
           <Login
             {...props}
             handleLogin={this.props.handleLogin}
-          />
-        )} />
+            bullshit={this.bullshit}
+            />
+            )} />
         <Route path='/register' render={(props) => (
           <Register
-            {...props}
-            handleRegister={this.props.handleRegister}
+          {...props}
+          handleRegister={this.props.handleRegister}
           />
-        )} />
+          )} />
         <Route path='/about' component={About} />
         <Route path='/home' component={Home} />
 
         {/* <Route exact path='/users/:id/locations' render={(props) => (
-             <UserLanding
-            {...props}
-            locations={this.state.locations}
-          /> */}
+          <UserLanding
+          {...props}
+          locations={this.state.locations}
+        /> */}
         
-          <Route exact path='/users/:id/locations' render={(props) => (
-             <UserLanding
+          <Route exact path='/locations' render={(props) => (
+            <UserLanding
             {...props}
             // locations={this.state.readAllLocations}
             handleLocationDelete={this.handleLocationDelete}
             locations={this.state.locations}
+            readAllLocations={this.readAllLocations}
           />
-
+    
         )} />
-
-
-
-
-
-
-
-
-
-
-
         
+
+
+
+
+
+
+
+
+
+
+
         {/*<Route exact path='/foods' render={(props) => (
           <ShowFoods
             {...props}

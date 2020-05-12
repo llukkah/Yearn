@@ -20,9 +20,16 @@ class App extends Component {
   }
 
   handleLogin = async (loginData) => {
-    const currentUser = await loginUser(loginData);
-    // debugger;
+    const {currentUser, locations, tasks} = await loginUser(loginData);
     this.setState({ currentUser })
+    debugger;
+    return {locations, tasks}
+
+
+
+
+
+    // this.props.history.push(`/users/${currentUser.id}/locations`)
   }
 
   handleRegister = async (registerData) => {

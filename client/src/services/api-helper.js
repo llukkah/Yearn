@@ -14,7 +14,9 @@ export const loginUser = async (loginData) => {
   const resp = await api.post('/auth/login', { auth: loginData });
   localStorage.setItem('authToken', resp.data.token);
   api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`;
-  return resp.data.user;
+  debugger;
+  return {currentUser: resp.data.user, locations: resp.data.locations, tasks: resp.data.tasks};
+
 }
 
 export const registerUser = async (registerData) => {
@@ -56,8 +58,8 @@ export const postUser = async (locationData) => {
 // ============== locations ===============
 // ========================================
 //full crud
-export const getAllLocations = async (id) => {
-    const resp = await api.get(`/users/${id}/locations`);
+export const getAllLocations = async () => {
+    const resp = await api.get(`/locations`);
     return resp.data;
   }
   

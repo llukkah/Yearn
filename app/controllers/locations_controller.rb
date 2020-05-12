@@ -3,8 +3,8 @@ class LocationsController < ApplicationController
   before_action :authorize_request
   # GET /locations
   def index
-    @locations = Location.all
-    render json: @locations, include: :tasks, status: :ok
+
+    render json: @current_user.locations, include: :tasks, status: :ok
   end
 
   # GET /locations/1
