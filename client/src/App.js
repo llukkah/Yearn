@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router';
 import './App.css'
-
-import Header from './components/Header';
+import Nav from './components/Nav'
 import Main from './components/Main';
 import {
   loginUser,
@@ -22,6 +21,7 @@ class App extends Component {
 
   handleLogin = async (loginData) => {
     const currentUser = await loginUser(loginData);
+    // debugger;
     this.setState({ currentUser })
   }
 
@@ -41,16 +41,16 @@ class App extends Component {
       currentUser: null
     })
     removeToken();
-    this.props.history.push('/');
+    this.props.history.push('/home');
   }
 
   render() {
     return (
       <div className="App">
-        {/* <Header
+        <Nav
           handleLogout={this.handleLogout}
           currentUser={this.state.currentUser}
-        /> */}
+        />
         <Main
           handleRegister={this.handleRegister}
           handleLogin={this.handleLogin}

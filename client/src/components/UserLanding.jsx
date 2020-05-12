@@ -1,31 +1,39 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
+// export default function UserLanding(props) {
+
+//   //  debugger; 
+//   return (
+//     <div>
+//        {
+//         props.currentUser
+//           ?
+//           <h1>Where are you going today, {props.currentUser.username} ?</h1>
+//           :
+//           <p>Userlanding welcome message and shows all locations</p>
+//       }
+//     </div>
+//   )
+// }
 
 export default function UserLanding(props) {
-  return (
-    <header>
-      <h1>Where are you going today, {props.currentUser.username} ?</h1>
-      {/* {
-        props.currentUser
-          ?
-          <>
-            <p>{props.currentUser.username}</p>
-            <button onClick={props.handleLogout}>Logout</button>
-          </>
-          :
-          <Link to="/login">Login/Register</Link>
-      }
-      <hr />
-      {
-        props.currentUser
-        &&
-        <>
-          <Link to="/foods">Foods</Link>
-          <Link to="/flavors">Flavors</Link>
-          <hr />
-        </>
-      } */}
-
-    </header>
-  )
-}
+    return (
+      <div>
+        <h3>Where are you going today ?</h3>
+        {props.locations.map(location => (
+          <React.Fragment key={location.id}>
+            <Link to={`/users/:id/locations/${location.id}`}>{location.city}, {location.country}</Link>
+            <button onClick={() => {
+              props.history.push(`/users/:id/locations/${location.id}/edit`);
+            }}>Edit</button>
+            <button onClick={() => {
+              props.handleLocationDelete(location.id);
+            }}>Delete</button>
+          </React.Fragment>
+        ))}
+        {/* <Link to="/foods/new"><button>Create</button></Link> */}
+      </div>
+    )
+  }
+  

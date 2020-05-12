@@ -20,7 +20,7 @@ export default class Register extends Component {
       <form onSubmit={(e) => {
         e.preventDefault();
         this.props.handleRegister(this.state);
-        this.props.history.push('/');
+        this.props.history.push('/users/:id/locations');
       }}>
         <h3>Register</h3>
         <label htmlFor="username">username:</label>

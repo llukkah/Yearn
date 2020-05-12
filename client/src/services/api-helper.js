@@ -76,7 +76,7 @@ export const putLocation = async (userId, locationId, locationData) => {
     return resp.data;
   }
   
-export const destroyFood = async (userId, locationId) => {
+export const destroyLocation = async (userId, locationId) => {
     const resp = await api.delete(`/users/${userId}/locations/${locationId}`);
     return resp;
   }
@@ -97,7 +97,6 @@ export const postTask = async (userId, locationId, locationData) => {
   
 export const putTask = async (userId, locationId, taskId, locationData) => {
     const resp = await api.put(`/users/${userId}/locations/${locationId}/tasks/${taskId}`, locationData);
-    // const resp = await api.put(`/users/${id}/locations/${id}/tasks/${id}`, locationData);
     return resp.data;
   }
   

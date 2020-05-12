@@ -3,12 +3,10 @@ import { Route } from 'react-router-dom';
 
 import Login from './Login';
 import Register from './Register';
-import { getAllLocations, getOneLocation, getAllTasks, postLocation, putLocation, destroyLocation, putLocation } from '../services/api-helper';
+import { getAllLocations, getOneLocation, getAllTasks, postLocation, putLocation, destroyLocation } from '../services/api-helper';
+import About from './About'
+import Home from './Home'
 import UserLanding from './UserLanding';
-// import ShowFoods from './ShowFoods';
-// import CreateFood from './CreateFood';
-// import UpdateFood from './UpdateFood';
-// import FoodItem from './FoodItem';
 
 export default class Main extends Component {
   state = {
@@ -18,7 +16,7 @@ export default class Main extends Component {
 
   componentDidMount() {
     this.readAllLocations();
-    this.readAllFoods();
+    this.readAllTasks();
   }
   //======================================
   //============== Location ==============
@@ -67,30 +65,30 @@ export default class Main extends Component {
     this.setState({ tasks })
   }
 
-  handleTaskSubmit = async (taskData) => {
-    const newTask = await postTask(taskData);
-    this.setState(prevState => ({
-      tasks: [...prevState.tasks, newTask]
-    }))
-  }
+//   handleTaskSubmit = async (taskData) => {
+//     const newTask = await postTask(taskData);
+//     this.setState(prevState => ({
+//       tasks: [...prevState.tasks, newTask]
+//     }))
+//   }
 
-  handleTaskUpdate = async (id, taskData) => {
-    const updatedTask = await putLocation(id, taskData);
-    this.setState(prevState => ({
-      tasks: prevState.locations.map(task => {
-        return task.id === id ? updatedTask : task
-      })
-    }))
-  }
+//   handleTaskUpdate = async (id, taskData) => {
+//     const updatedTask = await putLocation(id, taskData);
+//     this.setState(prevState => ({
+//       tasks: prevState.locations.map(task => {
+//         return task.id === id ? updatedTask : task
+//       })
+//     }))
+//   }
 
-  handleTaskDelete = async (id) => {
-    await destroyTask(id);
-    this.setState(prevState => ({
-      tasks: prevState.locations.filter(task => {
-        return task.id !== id
-      })
-    }))
-  }
+//   handleTaskDelete = async (id) => {
+//     await destroyTask(id);
+//     this.setState(prevState => ({
+//       tasks: prevState.locations.filter(task => {
+//         return task.id !== id
+//       })
+//     }))
+//   }
 
   render() {
     return (
@@ -107,11 +105,36 @@ export default class Main extends Component {
             handleRegister={this.props.handleRegister}
           />
         )} />
-        <Route path='/users/:id/locations' render={() => (
-          <UserLanding
+        <Route path='/about' component={About} />
+        <Route path='/home' component={Home} />
+
+        {/* <Route exact path='/users/:id/locations' render={(props) => (
+             <UserLanding
+            {...props}
+            locations={this.state.locations}
+          /> */}
+        
+          <Route exact path='/users/:id/locations' render={(props) => (
+             <UserLanding
+            {...props}
+            // locations={this.state.readAllLocations}
+            handleLocationDelete={this.handleLocationDelete}
             locations={this.state.locations}
           />
+
         )} />
+
+
+
+
+
+
+
+
+
+
+
+        
         {/*<Route exact path='/foods' render={(props) => (
           <ShowFoods
             {...props}
@@ -119,12 +142,16 @@ export default class Main extends Component {
             foods={this.state.foods}
           />
         )} />
+
+        //locations/new... CreateLocation
         <Route path="/foods/new" render={(props) => (
           <CreateFood
             {...props}
             handleFoodSubmit={this.handleFoodSubmit}
           />
         )} />
+
+        //locations/id/edit.... update location component
         <Route path='/foods/:id/edit' render={(props) => {
           const { id } = props.match.params
           return <UpdateFood
@@ -133,6 +160,8 @@ export default class Main extends Component {
             foodId={id}
           />
         }} />
+
+        /location/:id...... show 1 location
         <Route exact path='/foods/:id' render={(props) => {
           const { id } = props.match.params
           return <FoodItem

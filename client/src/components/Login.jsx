@@ -15,11 +15,14 @@ export default class Login extends Component {
   }
   render() {
     const { username, email, password } = this.state;
+    // debugger;
     return (
       <form onSubmit={(e) => {
         e.preventDefault();
         this.props.handleLogin(this.state);
-        this.props.history.push('/');
+        // debugger;
+        this.props.history.push('/users/:id/locations');
+        // this.props.history.push('/home');
       }}>
         <h3>Login</h3>
         <label htmlFor="username">username:</label>
