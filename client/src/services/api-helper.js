@@ -73,16 +73,16 @@ export const getAllLocations = async () => {
   return resp.data;
 };
 
-export const getOneLocation = async (userId, locationId) => {
-  const resp = await api.get(`/users/${userId}/locations/${locationId}`);
+export const getOneLocation = async (locationId, locationData) => {
+  const resp = await api.get(`/locations/${locationId}`, locationData);
   return resp.data;
 };
-
-export const postLocation = async (id, locationData) => {
-  const resp = await api.post(`/users/${id}/locations`, locationData);
+//create location
+export const postLocation = async (locationData) => {
+  const resp = await api.post(`/locations`, locationData);
   return resp.data;
 };
-
+//update location
 export const putLocation = async (userId, locationId, locationData) => {
   const resp = await api.put(
     `/users/${userId}/locations/${locationId}`,
@@ -91,8 +91,8 @@ export const putLocation = async (userId, locationId, locationData) => {
   return resp.data;
 };
 
-export const destroyLocation = async (userId, locationId) => {
-  const resp = await api.delete(`/users/${userId}/locations/${locationId}`);
+export const destroyLocation = async (locationId) => {
+  const resp = await api.delete(`/locations/${locationId}`);
   return resp;
 };
 
@@ -100,30 +100,30 @@ export const destroyLocation = async (userId, locationId) => {
 // ================ tasks =================
 // ========================================
 //show all, create update delete
-export const getAllTasks = async (userId, locationId) => {
-  const resp = await api.get(`/users/${userId}/locations/${locationId}/tasks`);
-  return resp.data;
-};
+// export const getAllTasks = async (userId, locationId) => {
+//   const resp = await api.get(`/users/${userId}/locations/${locationId}/tasks`);
+//   return resp.data;
+// };
 
-export const postTask = async (userId, locationId, locationData) => {
-  const resp = await api.post(
-    `/users/${userId}/locations/${locationId}/tasks`,
-    locationData
-  );
-  return resp.data;
-};
+// export const postTask = async (userId, locationId, locationData) => {
+//   const resp = await api.post(
+//     `/users/${userId}/locations/${locationId}/tasks`,
+//     locationData
+//   );
+//   return resp.data;
+// };
 
-export const putTask = async (userId, locationId, taskId, locationData) => {
-  const resp = await api.put(
-    `/users/${userId}/locations/${locationId}/tasks/${taskId}`,
-    locationData
-  );
-  return resp.data;
-};
+// export const putTask = async (userId, locationId, taskId, locationData) => {
+//   const resp = await api.put(
+//     `/users/${userId}/locations/${locationId}/tasks/${taskId}`,
+//     locationData
+//   );
+//   return resp.data;
+// };
 
-export const destroyTask = async (userId, locationId, taskId) => {
-  const resp = await api.delete(
-    `/users/${userId}/locations/${locationId}/tasks/${taskId}`
-  );
-  return resp;
-};
+// export const destroyTask = async (userId, locationId, taskId) => {
+//   const resp = await api.delete(
+//     `/users/${userId}/locations/${locationId}/tasks/${taskId}`
+//   );
+//   return resp;
+// };

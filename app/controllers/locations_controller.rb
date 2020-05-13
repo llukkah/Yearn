@@ -1,9 +1,8 @@
 class LocationsController < ApplicationController
   before_action :set_location, only: [:show, :update, :destroy]
-  before_action :authorize_request
+  # before_action :authorize_request
   # GET /locations
   def index
-
     render json: @current_user.locations, include: :tasks, status: :ok
   end
 

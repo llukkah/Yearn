@@ -6,7 +6,6 @@ import Register from "./Register";
 import {
   getAllLocations,
   getOneLocation,
-  getAllTasks,
   postLocation,
   putLocation,
   destroyLocation,
@@ -14,6 +13,8 @@ import {
 import About from "./About";
 import Home from "./Home";
 import UserLanding from "./UserLanding";
+import LocationCreate from "./LocationCreate";
+import LocationDetail from "./LocationDetail";
 
 export default class Main extends Component {
   state = {
@@ -23,8 +24,6 @@ export default class Main extends Component {
 
   componentDidMount() {
     this.setLocationData({}, this.props.confirmUser);
-    // this.readAllLocations();
-    // this.readAllTasks();
   }
   //======================================
   //============== Location ==============
@@ -64,39 +63,6 @@ export default class Main extends Component {
     }));
   };
 
-  //======================================
-  //=============== Tasks ================
-  //======================================
-  readAllTasks = async () => {
-    const tasks = await getAllTasks();
-    this.setState({ tasks });
-  };
-
-  //   handleTaskSubmit = async (taskData) => {
-  //     const newTask = await postTask(taskData);
-  //     this.setState(prevState => ({
-  //       tasks: [...prevState.tasks, newTask]
-  //     }))
-  //   }
-
-  //   handleTaskUpdate = async (id, taskData) => {
-  //     const updatedTask = await putLocation(id, taskData);
-  //     this.setState(prevState => ({
-  //       tasks: prevState.locations.map(task => {
-  //         return task.id === id ? updatedTask : task
-  //       })
-  //     }))
-  //   }
-
-  //   handleTaskDelete = async (id) => {
-  //     await destroyTask(id);
-  //     this.setState(prevState => ({
-  //       tasks: prevState.locations.filter(task => {
-  //         return task.id !== id
-  //       })
-  //     }))
-  //   }
-
   //call for login register and verify
   setLocationData = async (authData, authFN) => {
     const { locations, tasks } = await authFN(authData);
@@ -106,6 +72,8 @@ export default class Main extends Component {
   render() {
     return (
       <main>
+        <Route path="/about" component={About} />
+        <Route path="/home" component={Home} />
         <Route
           path="/login"
           render={(props) => (
@@ -126,30 +94,50 @@ export default class Main extends Component {
             />
           )}
         />
-        <Route path="/about" component={About} />
-        <Route path="/home" component={Home} />
-
-        {/* <Route exact path='/users/:id/locations' render={(props) => (
-          <UserLanding
-          {...props}
-          locations={this.state.locations}
-        /> */}
-
         <Route
           exact
           path="/locations"
           render={(props) => (
             <UserLanding
               {...props}
-              // locations={this.state.readAllLocations}
               handleLocationDelete={this.handleLocationDelete}
               locations={this.state.locations}
               readAllLocations={this.readAllLocations}
+              handleLocationSubmit={this.handleLocationSubmit}
+            />
+          )}
+        />
+        {/* locations/new... CreateLocation */}
+        <Route
+          path="/locations/create"
+          render={(props) => (
+            <LocationCreate
+              {...props}
+              currentUser={this.props.currentUser}
+              handleLocationSubmit={this.handleLocationSubmit}
             />
           )}
         />
 
-        {/*<Route exact path='/foods' render={(props) => (
+        <Route
+          exact
+          path="/locations/:id"
+          render={(props) => {
+            const { id } = props.match.params;
+            return (
+              <LocationDetail
+              {...props}
+                locationId={id}
+                locations={this.state.locations}
+                readOneLocation={this.state.readOneLocation}
+                handleLocationDelete={this.handleLocationDelete}
+                handleLocationUpdate={this.handleLocationUpdate}
+              />
+            );
+          }}
+        />
+
+        {/* <Route exact path='/foods' render={(props) => (
           <ShowFoods
             {...props}
             handleFoodDelete={this.handleFoodDelete}
@@ -157,15 +145,9 @@ export default class Main extends Component {
           />
         )} />
 
-        //locations/new... CreateLocation
-        <Route path="/foods/new" render={(props) => (
-          <CreateFood
-            {...props}
-            handleFoodSubmit={this.handleFoodSubmit}
-          />
-        )} />
 
-        //locations/id/edit.... update location component
+
+        locations/id/edit.... update location component
         <Route path='/foods/:id/edit' render={(props) => {
           const { id } = props.match.params
           return <UpdateFood
@@ -173,17 +155,7 @@ export default class Main extends Component {
             handleFoodUpdate={this.handleFoodUpdate}
             foodId={id}
           />
-        }} />
-
-        /location/:id...... show 1 location
-        <Route exact path='/foods/:id' render={(props) => {
-          const { id } = props.match.params
-          return <FoodItem
-            foodId={id}
-            flavors={this.state.flavors}
-          />
-        }
-        } /> */}
+        }} /> */}
       </main>
     );
   }

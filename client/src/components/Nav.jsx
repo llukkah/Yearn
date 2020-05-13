@@ -11,7 +11,11 @@ export default function Nav(props) {
       {
         props.currentUser
           ?
+          <>
+           <Link to="/locations/create">Create</Link>
+           <Link to="/locations">Profile</Link>
             <button onClick={props.handleLogout}>Logout</button>
+            </>
           :
           <>
           <Link to="/login">Login</Link>

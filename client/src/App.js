@@ -54,6 +54,7 @@ class App extends Component {
           currentUser={this.state.currentUser}
         />
         <Main
+          currentUser={this.state.currentUser}
           handleRegister={this.handleRegister}
           handleLogin={this.handleLogin}
           confirmUser={this.confirmUser}
