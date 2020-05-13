@@ -1,20 +1,28 @@
-import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import React, { Component } from "react";
+import { Route } from "react-router-dom";
 
-import Login from './Login';
-import Register from './Register';
-import { getAllLocations, getOneLocation, getAllTasks, postLocation, putLocation, destroyLocation } from '../services/api-helper';
-import About from './About'
-import Home from './Home'
-import UserLanding from './UserLanding';
+import Login from "./Login";
+import Register from "./Register";
+import {
+  getAllLocations,
+  getOneLocation,
+  getAllTasks,
+  postLocation,
+  putLocation,
+  destroyLocation,
+} from "../services/api-helper";
+import About from "./About";
+import Home from "./Home";
+import UserLanding from "./UserLanding";
 
 export default class Main extends Component {
   state = {
     locations: [],
-    tasks: []
-  }
+    tasks: [],
+  };
 
   componentDidMount() {
+    this.setLocationData({}, this.props.confirmUser);
     // this.readAllLocations();
     // this.readAllTasks();
   }
@@ -23,127 +31,123 @@ export default class Main extends Component {
   //======================================
   readAllLocations = async () => {
     const locations = await getAllLocations();
-    this.setState({ locations })
-  }
+    this.setState({ locations });
+  };
 
   readOneLocation = async () => {
     const location = await getOneLocation();
-    this.setState({ location })
-  }
+    this.setState({ location });
+  };
 
   handleLocationSubmit = async (locationData) => {
     const newLocation = await postLocation(locationData);
-    this.setState(prevState => ({
-      locations: [...prevState.locations, newLocation]
-    }))
-  }
+    this.setState((prevState) => ({
+      locations: [...prevState.locations, newLocation],
+    }));
+  };
 
   handleLocationUpdate = async (id, locationData) => {
     const updatedLocation = await putLocation(id, locationData);
-    this.setState(prevState => ({
-      locations: prevState.locations.map(location => {
-        return location.id === id ? updatedLocation : location
-      })
-    }))
-  }
+    this.setState((prevState) => ({
+      locations: prevState.locations.map((location) => {
+        return location.id === id ? updatedLocation : location;
+      }),
+    }));
+  };
 
   handleLocationDelete = async (id) => {
     await destroyLocation(id);
-    this.setState(prevState => ({
-      locations: prevState.locations.filter(location => {
-        return location.id !== id
-      })
-    }))
-  }
-  
-  
+    this.setState((prevState) => ({
+      locations: prevState.locations.filter((location) => {
+        return location.id !== id;
+      }),
+    }));
+  };
+
   //======================================
   //=============== Tasks ================
   //======================================
   readAllTasks = async () => {
     const tasks = await getAllTasks();
-    this.setState({ tasks })
-  }
+    this.setState({ tasks });
+  };
 
-//   handleTaskSubmit = async (taskData) => {
-//     const newTask = await postTask(taskData);
-//     this.setState(prevState => ({
-//       tasks: [...prevState.tasks, newTask]
-//     }))
-//   }
+  //   handleTaskSubmit = async (taskData) => {
+  //     const newTask = await postTask(taskData);
+  //     this.setState(prevState => ({
+  //       tasks: [...prevState.tasks, newTask]
+  //     }))
+  //   }
 
-//   handleTaskUpdate = async (id, taskData) => {
-//     const updatedTask = await putLocation(id, taskData);
-//     this.setState(prevState => ({
-//       tasks: prevState.locations.map(task => {
-//         return task.id === id ? updatedTask : task
-//       })
-//     }))
-//   }
+  //   handleTaskUpdate = async (id, taskData) => {
+  //     const updatedTask = await putLocation(id, taskData);
+  //     this.setState(prevState => ({
+  //       tasks: prevState.locations.map(task => {
+  //         return task.id === id ? updatedTask : task
+  //       })
+  //     }))
+  //   }
 
-//   handleTaskDelete = async (id) => {
-//     await destroyTask(id);
-//     this.setState(prevState => ({
-//       tasks: prevState.locations.filter(task => {
-//         return task.id !== id
-//       })
-//     }))
-//   }
-bullshit = async (loginData) => {
-  const {locations, tasks} = this.props.handleLogin(loginData)
-  this.setState({locations, tasks})
-}
+  //   handleTaskDelete = async (id) => {
+  //     await destroyTask(id);
+  //     this.setState(prevState => ({
+  //       tasks: prevState.locations.filter(task => {
+  //         return task.id !== id
+  //       })
+  //     }))
+  //   }
 
-
-
+  //call for login register and verify
+  setLocationData = async (authData, authFN) => {
+    const { locations, tasks } = await authFN(authData);
+    this.setState({ locations, tasks });
+  };
 
   render() {
-    debugger;
     return (
       <main>
-        <Route path='/login' render={(props) => (
-          <Login
-            {...props}
-            handleLogin={this.props.handleLogin}
-            bullshit={this.bullshit}
+        <Route
+          path="/login"
+          render={(props) => (
+            <Login
+              {...props}
+              handleLogin={this.props.handleLogin}
+              setLocationData={this.setLocationData}
             />
-            )} />
-        <Route path='/register' render={(props) => (
-          <Register
-          {...props}
-          handleRegister={this.props.handleRegister}
-          />
-          )} />
-        <Route path='/about' component={About} />
-        <Route path='/home' component={Home} />
+          )}
+        />
+        <Route
+          path="/register"
+          render={(props) => (
+            <Register
+              {...props}
+              handleRegister={this.props.handleRegister}
+              setLocationData={this.setLocationData}
+            />
+          )}
+        />
+        <Route path="/about" component={About} />
+        <Route path="/home" component={Home} />
 
         {/* <Route exact path='/users/:id/locations' render={(props) => (
           <UserLanding
           {...props}
           locations={this.state.locations}
         /> */}
-        
-          <Route exact path='/locations' render={(props) => (
+
+        <Route
+          exact
+          path="/locations"
+          render={(props) => (
             <UserLanding
-            {...props}
-            // locations={this.state.readAllLocations}
-            handleLocationDelete={this.handleLocationDelete}
-            locations={this.state.locations}
-            readAllLocations={this.readAllLocations}
-          />
-    
-        )} />
-        
-
-
-
-
-
-
-
-
-
-
+              {...props}
+              // locations={this.state.readAllLocations}
+              handleLocationDelete={this.handleLocationDelete}
+              locations={this.state.locations}
+              readAllLocations={this.readAllLocations}
+            />
+          )}
+        />
 
         {/*<Route exact path='/foods' render={(props) => (
           <ShowFoods
@@ -181,6 +185,6 @@ bullshit = async (loginData) => {
         }
         } /> */}
       </main>
-    )
+    );
   }
 }

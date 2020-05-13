@@ -1,34 +1,33 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export default class Login extends Component {
   state = {
-    username: '',
-    email: '',
-	password: ''
-  }
+    username: "",
+    email: "",
+    password: "",
+  };
 
   handleChange = (event) => {
-    const {name, value} = event.target;
+    const { name, value } = event.target;
     this.setState({
-      [name]: value
-    })
-  }
+      [name]: value,
+    });
+  };
   render() {
     const { username, email, password } = this.state;
     // debugger;
     return (
-      <form onSubmit={(e) => {
-        e.preventDefault();
-        // this.props.handleLogin(this.state);
-        this.props.bullshit(this.state)
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          // this.props.handleLogin(this.state);
+          this.props.setLocationData(this.state, this.props.handleLogin);
 
-
-
-
-        // this.props.readAllLocations();
-        // debugger;
-        this.props.history.push('/locations');
-      }}>
+          // this.props.readAllLocations();
+          // debugger;
+          this.props.history.push("/locations");
+        }}
+      >
         <h3>Login</h3>
         <label htmlFor="username">username:</label>
         <input
@@ -56,6 +55,6 @@ export default class Login extends Component {
         />
         <button>Submit</button>
       </form>
-    )
+    );
   }
 }
