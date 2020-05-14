@@ -9,8 +9,8 @@
 # Location.destroy_all
 # Task.destroy_all
 
-# User.create(username: "Admin", email: "admin@email.com", password: "123456")
-# p "#{User.count} user(s) created"
+User.create(username: "Admin", email: "admin@email.com", password: "123456")
+p "#{User.count} user(s) created"
 
 
 newYork = Location.create(city: "New York", country: "U.S.A.", photo: "https://imgur.com/Fa34Yuv", lodgingDetails: "1Hotel 60 Furman St, Brooklyn, NY 11201", activityDetails: "Brooklyn Tour Guide Tuesday 10AM", user_id: 4)
@@ -25,24 +25,24 @@ p "#{Location.count} locations created"
 
 
 
-# newYork1 = Task.create(listItem: "Walk brooklyn bridge", location_id: 5)
-# newYork2 = Task.create(listItem: "Eat slice of pizza", location_id: 5)
-# newYork3 = Task.create(listItem: "Lay around Central Park", location_id: 5)
-# newYork4 = Task.create(listItem: "Bring bagels home", location_id: 5)
+newYork1 = Task.create(listItem: "Walk brooklyn bridge", location_id: 5)
+newYork2 = Task.create(listItem: "Eat slice of pizza", location_id: 5)
+newYork3 = Task.create(listItem: "Lay around Central Park", location_id: 5)
+newYork4 = Task.create(listItem: "Bring bagels home", location_id: 5)
 
-# agra1 = Task.create(listItem: "Eat all the curries", location_id: 6)
-# agra2 = Task.create(listItem: "Take photos at Taj Mahal", location_id: 6)
-# agra3 = Task.create(listItem: "Visit spice market", location_id: 6)
-# agra4 = Task.create(listItem: "Buy mu-mus.", location_id: 6)
+agra1 = Task.create(listItem: "Eat all the curries", location_id: 6)
+agra2 = Task.create(listItem: "Take photos at Taj Mahal", location_id: 6)
+agra3 = Task.create(listItem: "Visit spice market", location_id: 6)
+agra4 = Task.create(listItem: "Buy mu-mus.", location_id: 6)
 
-# montreal1 = Task.create(listItem: "Walk down Rue Ste. Catherine", location_id: 7)
-# montreal2 = Task.create(listItem: "Try poutine", location_id: 7)
-# montreal3 = Task.create(listItem: "Go to Tam-Tams", location_id: 7)
-# montreal4  = Task.create(listItem: "Go to Piknic Electronik", location_id: 7)
+montreal1 = Task.create(listItem: "Walk down Rue Ste. Catherine", location_id: 7)
+montreal2 = Task.create(listItem: "Try poutine", location_id: 7)
+montreal3 = Task.create(listItem: "Go to Tam-Tams", location_id: 7)
+montreal4  = Task.create(listItem: "Go to Piknic Electronik", location_id: 7)
 
-# paris1 = Task.create(listItem: "Visit Picasso Museum", location_id: 8)
-# paris2 = Task.create(listItem: "People watch while sipping espresso", location_id: 8)
-# paris3 = Task.create(listItem: "Learn how to make wine", location_id: 8)
-# paris4 = Task.create(listItem: "Eat all chocolate croissants", location_id: 8)
+paris1 = Task.create(listItem: "Visit Picasso Museum", location_id: 8)
+paris2 = Task.create(listItem: "People watch while sipping espresso", location_id: 8)
+paris3 = Task.create(listItem: "Learn how to make wine", location_id: 8)
+paris4 = Task.create(listItem: "Eat all chocolate croissants", location_id: 8)
 
-# p "#{Task.count} tasks created"
+p "#{Task.count} tasks created"
