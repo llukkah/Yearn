@@ -13,13 +13,13 @@ Task.destroy_all
 p "#{User.count} user(s) created"
 
 
-newYork = Location.create(city: "New York", country: "U.S.A.", photo: "https://imgur.com/Fa34Yuv", lodgingDetails: "1Hotel 60 Furman St, Brooklyn, NY 11201", activityDetails: "Brooklyn Tour Guide Tuesday 10AM", user: @user)
+newYork = Location.create(city: "New York", country: "U.S.A.", photo: "https://imgur.com/Fa34Yuv.jpg", lodgingDetails: "1Hotel 60 Furman St, Brooklyn, NY 11201", activityDetails: "Brooklyn Tour Guide Tuesday 10AM", user: @user)
 
-agra = Location.create(city: "Agra", country: "India", photo: "https://imgur.com/hR5WohQ", lodgingDetails: "Swatibal Vidhya Peeth School Link Rd, Paktola, Tajganj, Basai, Uttar Pradesh 282001, India", activityDetails: "Taj Mahal Photo 4PM", user: @user)
+agra = Location.create(city: "Agra", country: "India", photo: "https://imgur.com/hR5WohQ.jpg", lodgingDetails: "Swatibal Vidhya Peeth School Link Rd, Paktola, Tajganj, Basai, Uttar Pradesh 282001, India", activityDetails: "Taj Mahal Photo 4PM", user: @user)
 
-montreal = Location.create(city: "Montreal", country: "Canada", photo: "https://imgur.com/gCTttSP", lodgingDetails: "5000 Rue de Lanaudière, Montréal, Québec H2J 3R3, Canada", activityDetails: "Tam-Tams, Mount Royal Park, All Day", user: @user)
+montreal = Location.create(city: "Montreal", country: "Canada", photo: "https://imgur.com/gCTttSP.jpg", lodgingDetails: "5000 Rue de Lanaudière, Montréal, Québec H2J 3R3, Canada", activityDetails: "Tam-Tams, Mount Royal Park, All Day", user: @user)
 
-paris = Location.create(city: "Paris", country: "France", photo: "https://imgur.com/Ot2uQEu", lodgingDetails: "2 Square Caulaincourt, 75018 Paris, France", activityDetails: "Eiffel Tower Tour 12 PM", user: @user)
+paris = Location.create(city: "Paris", country: "France", photo: "https://imgur.com/Ot2uQEu.jpg", lodgingDetails: "2 Square Caulaincourt, 75018 Paris, France", activityDetails: "Eiffel Tower Tour 12 PM", user: @user)
 
 p "#{Location.count} locations created"
 
