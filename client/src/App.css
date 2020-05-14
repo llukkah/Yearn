@@ -2,10 +2,9 @@
 
 .Hero {
 width: 100%;
-max-width: 1400px;
+max-width: 1500px;
 height: 800px;
 background-size: 100% 100%;
 background-image: url('https://imgur.com/hABHhRf.jpg');
 background-repeat: no-repeat;
-border: 1px solid red;
 }

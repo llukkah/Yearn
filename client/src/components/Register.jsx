@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./LocationCreate.css";
 
 export default class Register extends Component {
   state = {
@@ -25,7 +26,7 @@ export default class Register extends Component {
         }}
       >
         <h3>Register</h3>
-        <label className="form-category" htmlFor="username">Username</label>
+        <p className="form-category-lr" htmlFor="username">Username</p>
         <input
           id="username"
           type="text"
@@ -33,7 +34,7 @@ export default class Register extends Component {
           value={username}
           onChange={this.handleChange}
         />
-        <label className="form-category" htmlFor="email">Email</label>
+        <p className="form-category-lr" htmlFor="email">Email</p>
         <input
           id="email"
           type="text"
@@ -41,7 +42,7 @@ export default class Register extends Component {
           value={email}
           onChange={this.handleChange}
         />
-        <label className="form-category" htmlFor="password">Password</label>
+        <p className="form-category-lr" htmlFor="password">Password</p>
         <input
           id="password"
           type="password"

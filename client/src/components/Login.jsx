@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-
+// import "./LocationCreate.css";
+import "./Login.css";
 export default class Login extends Component {
   state = {
     username: "",
@@ -23,7 +24,7 @@ export default class Login extends Component {
         }}
       >
         <h3>Login</h3>
-        <label className="form-category" htmlFor="username">Username</label>
+        <p className="form-category-lr" htmlFor="username">Username</p>
         <input
           id="username"
           type="text"
@@ -31,7 +32,7 @@ export default class Login extends Component {
           value={username}
           onChange={this.handleChange}
         />
-        <label className="form-category" htmlFor="password">Password</label>
+        <p className="form-category-lr" htmlFor="password">Password</p>
         <input
           id="password"
           type="password"

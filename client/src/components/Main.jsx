@@ -108,7 +108,6 @@ export default class Main extends Component {
             />
           )}
         />
-        {/* locations/new... CreateLocation */}
         <Route
           path="/locations/create"
           render={(props) => (
@@ -152,13 +151,10 @@ export default class Main extends Component {
             );
           }}
         />
-        {/* <Route exact path='/foods' render={(props) => (
-          <ShowFoods
-            {...props}
-            handleFoodDelete={this.handleFoodDelete}
-            foods={this.state.foods}
-          />
-        )} /> */}
+
+
+
+
       </main>
     );
   }

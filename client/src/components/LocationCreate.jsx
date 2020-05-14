@@ -8,12 +8,12 @@ export default class LocationCreate extends Component {
     lodgingDetails: "",
     activityDetails: "",
     listItem: "",
-    listItem2: "",
-    listItem3: "",
-    listItem4: "",
-    listItem5: "",
-    listItem6: "",
-    user_id: null
+    // listItem2: "",
+    // listItem3: "",
+    // listItem4: "",
+    // listItem5: "",
+    // listItem6: "",
+    user_id: null,
   };
 
   componentDidMount() {
@@ -65,7 +65,7 @@ export default class LocationCreate extends Component {
         />
         <p className="form-category">Lodging Details</p>
         <input
-          className="details"
+          className="form-category-details"
           name="lodgingDetails"
           placeholder="Airbnb, Mission District, SF, CA 415-555-5555"
           type="text"
@@ -74,7 +74,7 @@ export default class LocationCreate extends Component {
         />
         <p className="form-category">Activity Itinerary</p>
         <input
-          className="details"
+          className="form-category-details"
           name="activityDetails"
           placeholder="Sunset boatride at 6pm"
           type="text"
@@ -83,13 +83,14 @@ export default class LocationCreate extends Component {
         />
         <p className="form-category">Bucket List Items</p>
         <input
+          className="form-category-details"
           name="listItem"
           placeholder="Walk the Golden Gate Bridge"
           type="text"
           value={this.state.listItem}
           onChange={this.handleChange}
         />
-        <p className="form-category"></p>
+         {/* <p className="form-category"></p>
         <input
           name="listItem2"
           placeholder="Spend a Sunday in Dolores Park"
@@ -102,15 +103,15 @@ export default class LocationCreate extends Component {
           name="listItem3"
           placeholder="Cruise Lombard Street"
           type="text"
-          value={this.state.listItem2}
+          value={this.state.listItem3}
           onChange={this.handleChange}
-        />
-        <p className="form-category"></p>
+        /> */}
+       {/* <p className="form-category"></p>
         <input
           name="listItem4"
           placeholder="Watch fog roll in at Twin Peaks"
           type="text"
-          value={this.state.listItem2}
+          value={this.state.listItem4}
           onChange={this.handleChange}
         />
         <p className="form-category"></p>
@@ -118,7 +119,7 @@ export default class LocationCreate extends Component {
           name="listItem5"
           placeholder="Castro!"
           type="text"
-          value={this.state.listItem2}
+          value={this.state.listItem5}
           onChange={this.handleChange}
         />
         <p className="form-category"></p>
@@ -128,7 +129,7 @@ export default class LocationCreate extends Component {
           type="text"
           value={this.state.listItem2}
           onChange={this.handleChange}
-        />
+        />  */}
 
         <button className="form-button">Save</button>
       </form>
