@@ -9,7 +9,7 @@
   top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(196, 196, 196, 0.5);
+  background-color: rgba(196, 196, 196, 0.6);
   padding-left: 50px;
   padding-right: 50px;
   border-radius: 3%;
@@ -26,4 +26,37 @@
     font-family: 'Permanent Marker', cursive;
     font-size: 25px;
     color: #FDF7F7;
+    text-align: center;
+}
+
+
+/* ----------- iPhone X  iPhone 6/7/8 Plus ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+  .About {
+    margin-top: 200px;
+    font-size: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: auto;
+    width: 275px;
+    height: 500px;
+  }
+
+}
+/* ------------  Ipad ---------------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  .About {
+    top: 20%;
+    width: 700px;
+    background-color: rgba(196, 196, 196, 0.6);
+}
+.motto {
+  display: inline-block;
+  margin-left: 10px;
+}
+.motto-div {
+  text-align: center;
+}
 }

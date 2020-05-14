@@ -1,10 +1,8 @@
-/* @import url('https://fonts.googleapis.com/css?family=Bungee+Shade|Permanent+Marker|Playfair+Display|Source+Sans+Pro&display=swap'); */
-
 .Hero {
-width: 100%;
-max-width: 1500px;
-height: 800px;
-background-size: 100% 100%;
-background-image: url('https://imgur.com/hABHhRf.jpg');
-background-repeat: no-repeat;
+  width: 100%;
+  max-width: 1500px;
+  height: 800px;
+  background-size: 100% 100%;
+  background-image: url("https://imgur.com/hABHhRf.jpg");
+  background-repeat: no-repeat;
 }

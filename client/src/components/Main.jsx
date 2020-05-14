@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import "./Main.css";
 import Login from "./Login";
 import Register from "./Register";
 import {
@@ -46,10 +45,19 @@ export default class Main extends Component {
     }));
   };
 
+  // handleLocationUpdate = async (id, locationData) => {
+  //   const updatedLocation = await putLocation(id, locationData);
+  //   this.setState((prevState) => ({
+  //     locations: prevState.locations.map((location) => {
+  //       return location.id === id ? updatedLocation : location;
+  //     }),
+  //   }));
+  // };
+
   handleLocationUpdate = async (id, locationData) => {
     const updatedLocation = await putLocation(id, locationData);
     this.setState((prevState) => ({
-      locations: prevState.locations.map((location) => {
+      locations: prevState.locations.map(location => {
         return location.id === id ? updatedLocation : location;
       }),
     }));
@@ -137,9 +145,10 @@ export default class Main extends Component {
           }}
         />
         {/* locations/id/edit.... update location component */}
-        <Route
+        {/* <Route
           path="/locations/:id/edit"
           render={(props) => {
+            
             const { id } = props.match.params;
             return (
               <LocationUpdate
@@ -150,8 +159,17 @@ export default class Main extends Component {
               />
             );
           }}
-        />
-
+        /> */}
+        <Route path="/locations/:id/edit" render={(props) => {
+          const { id } = props.match.params;
+         return (<LocationUpdate
+         {...props}
+         handleLocationUpdate={this.handleLocationUpdate}
+         locationId={id}
+         currentUser={this.props.currentUser}
+          />
+         )
+        }}/>
 
 
 

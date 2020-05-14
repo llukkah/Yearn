@@ -60,3 +60,28 @@ a {
   text-align: center;
   overflow: scroll;
 }
+
+/* ----------- iPhone X  iPhone 6/7/8 Plus ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+  .detail-landing {
+    margin-top: 200px;
+    max-width: 300px;
+    width: 100%;
+    height: 500px;
+  }
+  .detail-header {
+    font-size: 50px;
+  }
+}
+
+/* -------- IPAD Pro ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  .detail-landing {
+    margin-top: 200px;
+    max-width: 950px;
+    width: 100%;
+    height: 500px;
+  }
+}

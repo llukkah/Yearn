@@ -26,7 +26,9 @@ export default class Register extends Component {
         }}
       >
         <h3>Register</h3>
-        <p className="form-category-lr" htmlFor="username">Username</p>
+        <p className="form-category-lr" htmlFor="username">
+          Username
+        </p>
         <input
           id="username"
           type="text"
@@ -34,7 +36,9 @@ export default class Register extends Component {
           value={username}
           onChange={this.handleChange}
         />
-        <p className="form-category-lr" htmlFor="email">Email</p>
+        <p className="form-category-lr" htmlFor="email">
+          Email
+        </p>
         <input
           id="email"
           type="text"
@@ -42,7 +46,9 @@ export default class Register extends Component {
           value={email}
           onChange={this.handleChange}
         />
-        <p className="form-category-lr" htmlFor="password">Password</p>
+        <p className="form-category-lr" htmlFor="password">
+          Password
+        </p>
         <input
           id="password"
           type="password"

@@ -9,16 +9,11 @@ import {
   verifyUser,
   removeToken,
 } from "./services/api-helper";
-import Hero from "./images/HiHero.jpg";
 
 class App extends Component {
   state = {
     currentUser: null,
   };
-
-  // componentDidMount() {
-  //   this.confirmUser();
-  // }
 
   handleLogin = async (loginData) => {
     const { currentUser, locations, tasks } = await loginUser(loginData);
@@ -54,8 +49,7 @@ class App extends Component {
           handleLogout={this.handleLogout}
           currentUser={this.state.currentUser}
         />
-      {/* <div className="Hero"><img src={Hero} alt="Hero" /></div> */}
-      <div className="Hero"></div>
+        <div className="Hero"></div>
         <Main
           currentUser={this.state.currentUser}
           handleRegister={this.handleRegister}

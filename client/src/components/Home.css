@@ -1,33 +1,62 @@
-@import url('https://fonts.googleapis.com/css?family=Bungee+Shade|Permanent+Marker|Playfair+Display|Source+Sans+Pro&display=swap');
-
+@import url("https://fonts.googleapis.com/css?family=Bungee+Shade|Permanent+Marker|Playfair+Display|Source+Sans+Pro&display=swap");
 
 .hero-text {
-    font-family: 'Permanent Marker', cursive;
-    font-size: 96px;
-    color: #FDF7F7;
-    letter-spacing: 0.2em;
+  font-family: "Permanent Marker", cursive;
+  font-size: 96px;
+  color: #fdf7f7;
+  letter-spacing: 0.2em;
 }
 
 .hero-text-find {
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .hero-text-your {
-    position: absolute;
-    top: 33%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .hero-text-saturday {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
+/* ----------- iPhone X  iPhone 6/7/8 Plus ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+  .hero-text {
+    font-size: 60px;
+  }
+  .hero-text-find {
+    top: 25%;
+  }
+  .hero-text-your {
+    top: 35%;
+  }
+  .hero-text-saturday {
+    top: 45%;
+  }
+}
+/* IPAD */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  .hero-text {
+    font-size: 60px;
+  }
+  .hero-text-find {
+    top: 10%;
+  }
+  .hero-text-your {
+    top: 20%;
+  }
+  .hero-text-saturday {
+    top: 30%;
+  }
 }

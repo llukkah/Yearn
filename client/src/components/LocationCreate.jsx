@@ -7,7 +7,8 @@ export default class LocationCreate extends Component {
     photo: "",
     lodgingDetails: "",
     activityDetails: "",
-    listItem: "",
+    tasks: "",
+    // listItem: "",
     // listItem2: "",
     // listItem3: "",
     // listItem4: "",
@@ -84,13 +85,14 @@ export default class LocationCreate extends Component {
         <p className="form-category">Bucket List Items</p>
         <input
           className="form-category-details"
-          name="listItem"
+          name="tasks"
           placeholder="Walk the Golden Gate Bridge"
           type="text"
-          value={this.state.listItem}
+          // value={this.state.listItem}
+          value={this.state.tasks}
           onChange={this.handleChange}
         />
-         {/* <p className="form-category"></p>
+        {/* <p className="form-category"></p>
         <input
           name="listItem2"
           placeholder="Spend a Sunday in Dolores Park"
@@ -106,7 +108,7 @@ export default class LocationCreate extends Component {
           value={this.state.listItem3}
           onChange={this.handleChange}
         /> */}
-       {/* <p className="form-category"></p>
+        {/* <p className="form-category"></p>
         <input
           name="listItem4"
           placeholder="Watch fog roll in at Twin Peaks"

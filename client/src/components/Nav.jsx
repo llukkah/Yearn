@@ -7,11 +7,11 @@ export default function Nav(props) {
   return (
     <div>
       <div className="nav-header">
-<span className="logo">
-        <Link to="/home" className="logo">
-          <img src={YearnLogo} alt="Yearn Logo" />
-        </Link>
- </span>
+        <span className="logo">
+          <Link to="/home" className="logo">
+            <img src={YearnLogo} alt="Yearn Logo" />
+          </Link>
+        </span>
 
         <span className="nav-link">
           <Link to="/about" className="nav-link-about">
@@ -19,14 +19,24 @@ export default function Nav(props) {
           </Link>
           {props.currentUser ? (
             <>
-              <Link to="/locations/create" className="nav-link-right">Create</Link>
-              <Link to="/locations" className="nav-link-right">Profile</Link>
-              <button onClick={props.handleLogout} className="nav-link-right">Logout</button>
+              <Link to="/locations/create" className="nav-link-right">
+                Create
+              </Link>
+              <Link to="/locations" className="nav-link-right">
+                Profile
+              </Link>
+              <Link onClick={props.handleLogout} className="nav-link-right">
+                Logout
+              </Link>
             </>
           ) : (
             <>
-              <Link to="/login" className="nav-link-right">Login</Link>
-              <Link to="/register"className="nav-link-right">Register</Link>
+              <Link to="/login" className="nav-link-right">
+                Login
+              </Link>
+              <Link to="/register" className="nav-link-right">
+                Register
+              </Link>
             </>
           )}
         </span>

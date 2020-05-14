@@ -24,7 +24,9 @@ export default class Login extends Component {
         }}
       >
         <h3>Login</h3>
-        <p className="form-category-lr" htmlFor="username">Username</p>
+        <p className="form-category-lr" htmlFor="username">
+          Username
+        </p>
         <input
           id="username"
           type="text"
@@ -32,7 +34,9 @@ export default class Login extends Component {
           value={username}
           onChange={this.handleChange}
         />
-        <p className="form-category-lr" htmlFor="password">Password</p>
+        <p className="form-category-lr" htmlFor="password">
+          Password
+        </p>
         <input
           id="password"
           type="password"

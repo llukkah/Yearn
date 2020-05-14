@@ -1,4 +1,13 @@
 .form-category-lr {
-    padding-left: 100px;
-    font-weight: 700;
+  padding-left: 100px;
+  font-weight: 700;
+}
+
+/* ----------- iPhone X  iPhone 6/7/8 Plus ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+  .form-category-lr {
+    padding-left: 20px;
   }
+}

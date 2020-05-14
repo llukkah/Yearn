@@ -10,16 +10,19 @@
 .nav-link a {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 24px;
-  color: #b63838;
   text-decoration: none;
-  padding-top: 100px;
-  margin-top: 25px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #b63838;
+}
+a:hover {
+  color: #fdf7f7;
 }
 .nav-link {
   margin-top: 25px;
 }
 .nav-link-right {
-  margin-left: 10px;
+  margin-left: 30px;
 }
 .logo {
   display: flex;
@@ -28,5 +31,47 @@
   margin: 10px;
 }
 .nav-link-about {
-  padding-left: 700px;
+  margin-left: 700px;
+}
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+}
+
+/* ----------- iPhone X  iPhone 6/7/8 Plus ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+  .nav-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px;
+  }
+  .nav-link-about {
+    margin-left: 30px;
+  }
+  .nav-link-right {
+    margin-left: 10px;
+  }
+  .nav-link a {
+    color: black;
+    font-size: 18px;
+  }
+}
+
+/* ======== iPad Pro ========= */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  .nav-link-about {
+    margin-left: 275px;
+  }
+  .user-landing {
+    max-width: 900px;
+    width: 100%;
+  }
+  .nav-link a {
+    color: black;
+  }
 }

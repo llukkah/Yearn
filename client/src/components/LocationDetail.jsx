@@ -17,7 +17,6 @@ export default function Nav(props) {
               <Link to={`/locations/${props.locationId}/edit`}>
                 <button className="detail-button">Edit</button>
               </Link>
-
               <button
                 className="detail-button"
                 onClick={() => {
@@ -28,7 +27,6 @@ export default function Nav(props) {
                 Delete
               </button>
             </div>
-            {/* </p> */}
             <img className="detail-photo" src={specificLocation.photo} />
             <div className="detail-card">
               <p className="details">Lodging Details</p>
