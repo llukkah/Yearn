@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css?family=Bungee+Shade|Permanent+Marker|Playfair+Display|Source+Sans+Pro&display=swap");
+
+.detail-photo {
+  width: 225px;
+  border-radius: 3%;
+  height: 345px;
+  margin: 20px;
+}
+.detail-header {
+  font-family: "Playfair Display", serif;
+  font-size: 64px;
+  color: #1f2031;
+}
+a {
+  text-decoration: none;
+}
+.detail-button {
+  margin-right: 10px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+}
+.detail-header-button,
+.detail-button {
+  margin-left: auto;
+  margin-right: auto;
+}
+.details {
+  font-family: "Playfair Display", serif;
+  color: #1f2031;
+  font-size: 30px;
+  text-decoration: underline;
+}
+.detail-landing {
+  margin-top: 100px;
+  background-color: rgba(196, 196, 196, 0.5);
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  overflow: scroll;
+  border-radius: 3%;
+  max-width: 1300px;
+  margin-left: 40px;
+  width: 100%;
+  height: 500px;
+  text-align: center;
+}
+.detail-card {
+  height: 345px;
+  background-color: #818e9b;
+  width: 225px;
+  display: inline-block;
+  margin: 20px;
+  border-radius: 3%;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #fdf7f7;
+  text-decoration: none;
+  font-size: 20px;
+  text-align: center;
+  overflow: scroll;
+}

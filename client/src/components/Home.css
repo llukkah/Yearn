@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade|Permanent+Marker|Playfair+Display|Source+Sans+Pro&display=swap');
+
+
+.hero-text {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 96px;
+    color: #FDF7F7;
+    letter-spacing: 0.2em;
+}
+
+.hero-text-find {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.hero-text-your {
+    position: absolute;
+    top: 33%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.hero-text-saturday {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}

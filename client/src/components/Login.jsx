@@ -3,7 +3,6 @@ import React, { Component } from "react";
 export default class Login extends Component {
   state = {
     username: "",
-    email: "",
     password: "",
   };
 
@@ -14,22 +13,17 @@ export default class Login extends Component {
     });
   };
   render() {
-    const { username, email, password } = this.state;
-    // debugger;
+    const { username, password } = this.state;
     return (
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          // this.props.handleLogin(this.state);
           this.props.setLocationData(this.state, this.props.handleLogin);
-
-          // this.props.readAllLocations();
-          // debugger;
           this.props.history.push("/locations");
         }}
       >
         <h3>Login</h3>
-        <label htmlFor="username">username:</label>
+        <label className="form-category" htmlFor="username">Username</label>
         <input
           id="username"
           type="text"
@@ -37,15 +31,7 @@ export default class Login extends Component {
           value={username}
           onChange={this.handleChange}
         />
-        <label htmlFor="email">email:</label>
-        <input
-          id="email"
-          type="text"
-          name="email"
-          value={email}
-          onChange={this.handleChange}
-        />
-        <label htmlFor="password">password:</label>
+        <label className="form-category" htmlFor="password">Password</label>
         <input
           id="password"
           type="password"
@@ -53,7 +39,7 @@ export default class Login extends Component {
           value={password}
           onChange={this.handleChange}
         />
-        <button>Submit</button>
+        <button className="form-button">Submit</button>
       </form>
     );
   }

@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade|Permanent+Marker|Playfair+Display|Source+Sans+Pro&display=swap');
+
+.About {
+  margin-top: 100px;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #1F2031;
+  font-size: 20px;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(196, 196, 196, 0.5);
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.desire,
+.same {
+  text-align: center;
+}
+.yearn,
+.author {
+  text-align: right;
+}
+.motto {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 25px;
+    color: #FDF7F7;
+}

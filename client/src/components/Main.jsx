@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-
+import "./Main.css";
 import Login from "./Login";
 import Register from "./Register";
 import {
@@ -15,6 +15,7 @@ import Home from "./Home";
 import UserLanding from "./UserLanding";
 import LocationCreate from "./LocationCreate";
 import LocationDetail from "./LocationDetail";
+import LocationUpdate from "./LocationUpdate";
 
 export default class Main extends Component {
   state = {
@@ -126,7 +127,7 @@ export default class Main extends Component {
             const { id } = props.match.params;
             return (
               <LocationDetail
-              {...props}
+                {...props}
                 locationId={id}
                 locations={this.state.locations}
                 readOneLocation={this.state.readOneLocation}
@@ -136,26 +137,28 @@ export default class Main extends Component {
             );
           }}
         />
-
+        {/* locations/id/edit.... update location component */}
+        <Route
+          path="/locations/:id/edit"
+          render={(props) => {
+            const { id } = props.match.params;
+            return (
+              <LocationUpdate
+                {...props}
+                locationId={id}
+                locations={this.state.locations}
+                handleLocationUpdate={this.handleLocationUpdate}
+              />
+            );
+          }}
+        />
         {/* <Route exact path='/foods' render={(props) => (
           <ShowFoods
             {...props}
             handleFoodDelete={this.handleFoodDelete}
             foods={this.state.foods}
           />
-        )} />
-
-
-
-        locations/id/edit.... update location component
-        <Route path='/foods/:id/edit' render={(props) => {
-          const { id } = props.match.params
-          return <UpdateFood
-            {...props}
-            handleFoodUpdate={this.handleFoodUpdate}
-            foodId={id}
-          />
-        }} /> */}
+        )} /> */}
       </main>
     );
   }

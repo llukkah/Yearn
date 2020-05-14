@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css?family=Bungee+Shade|Permanent+Marker|Playfair+Display|Source+Sans+Pro&display=swap");
+
+.city-photo {
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+}
+.user-landing-header,
+button {
+  margin-left: auto;
+  margin-right: auto;
+}
+.user-landing-header-text {
+  font-size: 48px;
+  font-family: "Playfair Display", serif;
+  color: #b63838;
+}
+.user-landing {
+  margin-top: 100px;
+  background-color: rgba(196, 196, 196, 0.5);
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  overflow: scroll;
+  border-radius: 3%;
+  max-width: 1300px;
+  margin-left: 40px;
+  width: 100%;
+  height: 500px;
+  text-align: center;
+}
+
+.user-landing-card {
+  background-color: #818e9b;
+  width: 225px;
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 3%;
+  padding: 10px;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #fdf7f7;
+  text-decoration: none;
+  font-size: 24px;
+  text-align: center;
+}

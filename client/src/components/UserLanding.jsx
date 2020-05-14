@@ -1,40 +1,31 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import "./UserLanding.css"
 
 export default class UserLanding extends Component {
   render() {
     // debugger;
     return (
-      <div>
-        <h3>Where are you going today ?</h3>
-        {this.props.locations.map((location) => (
-          <React.Fragment key={location.id}>
-            <Link to={`/locations/${location.id}`}>
-              <img src={location.photo} /> {location.city},
-              {location.country}
-            </Link>
-            {/* <button
-              onClick={() => {
-                this.this.props.history.push(`/locations/${location.id}/edit`);
-              }}
-            >
-              Edit
-            </button>*/}
-            {/* <button
-              onClick={() => {
-                this.props.handleLocationDelete(location.id);
-              }}
-            >
-              Delete
-            </button> */}
-          </React.Fragment>
-        ))}
-        {/* <Link to="/foods/new"><button>Create</button></Link> */}
-
+      <>
+      <div className="user-landing">
+      <div className="user-landing-header">
+        <h3 className="user-landing-header-text">Where are you going today ?</h3>
+        </div>
         <Link to="/locations/create">
           <button>Create</button>
         </Link>
+        <div>
+        {this.props.locations.map((location) => (
+          <React.Fragment key={location.id}>
+            <Link to={`/locations/${location.id}`} className="user-landing-card">
+              <img className="city-photo" src={location.photo} /> {location.city}, {location.country}
+            </Link>
+
+          </React.Fragment>
+        ))}
       </div>
+      </div>
+      </>
     );
   }
 }

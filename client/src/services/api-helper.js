@@ -83,11 +83,8 @@ export const postLocation = async (locationData) => {
   return resp.data;
 };
 //update location
-export const putLocation = async (userId, locationId, locationData) => {
-  const resp = await api.put(
-    `/users/${userId}/locations/${locationId}`,
-    locationData
-  );
+export const putLocation = async (locationId, locationData) => {
+  const resp = await api.put(`/locations/${locationId}`, locationData);
   return resp.data;
 };
 

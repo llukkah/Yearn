@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade|Permanent+Marker|Playfair+Display|Source+Sans+Pro&display=swap');
+
+.nav-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.nav-link a {
+    font-family: 'Source Sans Pro', sans-serif;
+    size: 24px;
+    color: #B63838;
+    text-decoration: none;
+    /* padding-right: 100px; */
+    padding-top: 100px; 
+}
+
+.nav-link-about {
+    padding-left: 500px;
+    /* padding-top: 100px;  */
+    /* display: flex;
+    flex-direction: row;
+    justify-content: flex-end; */
+}
+/* .logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+} */
+/* .nav-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+} */
