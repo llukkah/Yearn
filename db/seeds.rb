@@ -5,9 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.destroy_all
-Location.destroy_all
 Task.destroy_all
+Location.destroy_all
+User.destroy_all
 
 @user = User.create(username: "Admin", email: "admin@email.com", password: "123456")
 p "#{User.count} user(s) created"
