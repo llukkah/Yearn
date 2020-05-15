@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./LocationCreate.css";
+
 export default class LocationCreate extends Component {
   state = {
     city: "",
@@ -7,7 +8,7 @@ export default class LocationCreate extends Component {
     photo: "",
     lodgingDetails: "",
     activityDetails: "",
-    tasks: "",
+    tasks: [],
     // listItem: "",
     // listItem2: "",
     // listItem3: "",

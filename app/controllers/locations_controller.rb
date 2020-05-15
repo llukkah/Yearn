@@ -8,7 +8,7 @@ class LocationsController < ApplicationController
 
   # GET /locations/1
   def show
-    render json: @location, include: :tasks, status: ok
+    render json: @location, include: :tasks, status: :ok
   end
 
   # POST /locations

@@ -40,7 +40,12 @@ export default function Nav(props) {
 
             <div className="detail-card">
               <p className="details">Yearnings</p>
-              {/* <p>{specificLocation.tasks}</p> */}
+              {specificLocation.tasks.map((specificTask) => (
+                <p>{specificTask.listItem}</p>
+
+              ))
+
+              }
             </div>
           </div>
         ))}

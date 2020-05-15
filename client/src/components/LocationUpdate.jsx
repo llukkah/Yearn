@@ -9,14 +9,14 @@ export default class LocationUpdate extends Component {
     photo: "",
     lodgingDetails: "",
     activityDetails: "",
-    tasks: "",
+    tasks: [],
     // listItem: "",
     // listItem2: "",
     // listItem3: "",
     // listItem4: "",
     // listItem5: "",
     // listItem6: "",
-    user_id: null,
+    user_id: this.props.currentUser.id,
   };
 
   componentDidMount() {
@@ -36,7 +36,7 @@ export default class LocationUpdate extends Component {
       photo: locationItem.photo,
       lodgingDetails: locationItem.lodgingDetails,
       activityDetails: locationItem.activityDetails,
-      tasks: locationItem.tasks,
+      tasks: locationItem.listItem,
     });
   };
 
@@ -103,47 +103,6 @@ export default class LocationUpdate extends Component {
           value={this.state.tasks}
           onChange={this.handleChange}
         />
-        {/* <p className="form-category"></p>
-        <input
-          name="listItem2"
-          placeholder="Spend a Sunday in Dolores Park"
-          type="text"
-          value={this.state.listItem2}
-          onChange={this.handleChange}
-        />
-        <p className="form-category"></p>
-        <input
-          name="listItem3"
-          placeholder="Cruise Lombard Street"
-          type="text"
-          value={this.state.listItem3}
-          onChange={this.handleChange}
-        /> */}
-        {/* <p className="form-category"></p>
-        <input
-          name="listItem4"
-          placeholder="Watch fog roll in at Twin Peaks"
-          type="text"
-          value={this.state.listItem4}
-          onChange={this.handleChange}
-        />
-        <p className="form-category"></p>
-        <input
-          name="listItem5"
-          placeholder="Castro!"
-          type="text"
-          value={this.state.listItem5}
-          onChange={this.handleChange}
-        />
-        <p className="form-category"></p>
-        <input
-          name="listItem6"
-          placeholder="SF Pride last week of June"
-          type="text"
-          value={this.state.listItem2}
-          onChange={this.handleChange}
-        />  */}
-
         <button className="form-button">Save</button>
       </form>
     );

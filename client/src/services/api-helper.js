@@ -53,7 +53,6 @@ export const removeToken = () => {
 // ========================================
 // ================= user =================
 // ========================================
-//get 1 and create
 
 export const getOneUser = async (id) => {
   const resp = await api.get(`/users/${id}`);
@@ -67,7 +66,7 @@ export const postUser = async (locationData) => {
 // ========================================
 // ============== locations ===============
 // ========================================
-//full crud
+
 export const getAllLocations = async () => {
   const resp = await api.get(`/locations`);
   return resp.data;
@@ -92,35 +91,3 @@ export const destroyLocation = async (locationId) => {
   const resp = await api.delete(`/locations/${locationId}`);
   return resp;
 };
-
-// ========================================
-// ================ tasks =================
-// ========================================
-//show all, create update delete
-// export const getAllTasks = async (userId, locationId) => {
-//   const resp = await api.get(`/users/${userId}/locations/${locationId}/tasks`);
-//   return resp.data;
-// };
-
-// export const postTask = async (userId, locationId, locationData) => {
-//   const resp = await api.post(
-//     `/users/${userId}/locations/${locationId}/tasks`,
-//     locationData
-//   );
-//   return resp.data;
-// };
-
-// export const putTask = async (userId, locationId, taskId, locationData) => {
-//   const resp = await api.put(
-//     `/users/${userId}/locations/${locationId}/tasks/${taskId}`,
-//     locationData
-//   );
-//   return resp.data;
-// };
-
-// export const destroyTask = async (userId, locationId, taskId) => {
-//   const resp = await api.delete(
-//     `/users/${userId}/locations/${locationId}/tasks/${taskId}`
-//   );
-//   return resp;
-// };

@@ -19,7 +19,7 @@ a:hover {
   color: #fdf7f7;
 }
 .nav-link {
-  margin-top: 25px;
+  margin-top: 45px;
 }
 .nav-link-right {
   margin-left: 30px;
@@ -33,6 +33,7 @@ a:hover {
 .nav-link-about {
   margin-left: 700px;
 }
+
 
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
 
