@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css?family=Bungee+Shade|Permanent+Marker|Playfair+Display|Source+Sans+Pro&display=swap");
+
+.bucket-list-item {
+  padding-left: 100px;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.delete-task-button {
+font-weight: 700;
+margin-left: 20px;
+}

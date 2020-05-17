@@ -16,14 +16,14 @@
 
 .hero-text-your {
   position: absolute;
-  top: 33%;
+  top: 31.5%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 .hero-text-saturday {
   position: absolute;
-  top: 50%;
+  top: 48%;
   left: 50%;
   transform: translate(-50%, -50%);
 }

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./LocationCreate.css";
-import { getOneLocation } from "../services/api-helper";
+import "./LocationUpdate.css";
+import { Link } from "react-router-dom";
+import { getOneLocation, destroyTask } from "../services/api-helper";
 
 export default class LocationUpdate extends Component {
   state = {
@@ -10,12 +12,6 @@ export default class LocationUpdate extends Component {
     lodgingDetails: "",
     activityDetails: "",
     tasks: [],
-    // listItem: "",
-    // listItem2: "",
-    // listItem3: "",
-    // listItem4: "",
-    // listItem5: "",
-    // listItem6: "",
     user_id: this.props.currentUser.id,
   };
 
@@ -28,6 +24,15 @@ export default class LocationUpdate extends Component {
     this.setFormData();
   }
 
+  handleTaskDelete = async (locationId, taskId) => {
+    await destroyTask(locationId, taskId);
+    this.setState((prevState) => ({
+      tasks: prevState.tasks.filter((task) => {
+        return task.id !== taskId;
+      }),
+    }));
+  };
+
   setFormData = async () => {
     const locationItem = await getOneLocation(this.props.locationId);
     this.setState({
@@ -36,7 +41,7 @@ export default class LocationUpdate extends Component {
       photo: locationItem.photo,
       lodgingDetails: locationItem.lodgingDetails,
       activityDetails: locationItem.activityDetails,
-      tasks: locationItem.listItem,
+      tasks: locationItem.tasks,
     });
   };
 
@@ -94,16 +99,59 @@ export default class LocationUpdate extends Component {
           value={this.state.activityDetails}
           onChange={this.handleChange}
         />
+
         <p className="form-category">Bucket List Items</p>
+        {this.state.tasks.map((task) => (
+          <div className="bucket-list-div">
+            <p className="bucket-list-item">{task.listItem} 
+            <Link className="delete-task-button" onClick={() => {
+            this.handleTaskDelete(this.props.locationId, task.id); 
+          }}>Delete</Link>
+          </p>
+          </div>
+          ))}
+
+
+
+        {/* ///////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////// 
+        add single input field and update with submit button.
+        ///////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////// */}
+
         <input
           className="form-category-details"
-          name="tasks"
+          placeholder="none"
           type="text"
-          // value={this.state.listItem}
+          name="tasks"
           value={this.state.tasks}
           onChange={this.handleChange}
         />
-        <button className="form-button">Save</button>
+        <button
+        className="form-button"
+        onSubmit={(e) => {
+          e.preventDefault();
+          this.props.handleLocationSubmit(this.props.locationId, this.state);
+          // this.props.handleLocationSubmit(this.props.locationId, this.state.tasks);    
+        
+        
+        }}>Create New Yearning</button>
+
+
+
+
+
+{/* 
+        ///////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////// */}
+
+        <button className="form-button">Save Location and Yearnings</button>
       </form>
     );
   }

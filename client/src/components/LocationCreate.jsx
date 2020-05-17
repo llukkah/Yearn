@@ -9,12 +9,6 @@ export default class LocationCreate extends Component {
     lodgingDetails: "",
     activityDetails: "",
     tasks: [],
-    // listItem: "",
-    // listItem2: "",
-    // listItem3: "",
-    // listItem4: "",
-    // listItem5: "",
-    // listItem6: "",
     user_id: null,
   };
 
@@ -83,7 +77,20 @@ export default class LocationCreate extends Component {
           value={this.state.activityDetails}
           onChange={this.handleChange}
         />
+
+
+        {/* ///////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////
+
+        CREATE TASK.
+        INPUT NEEDED TO ADD TASK TO DB
+
+        ///////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////// */}
         <p className="form-category">Bucket List Items</p>
+        <p>{this.state.tasks.listItem}</p>
         <input
           className="form-category-details"
           name="tasks"
@@ -92,49 +99,30 @@ export default class LocationCreate extends Component {
           // value={this.state.listItem}
           value={this.state.tasks}
           onChange={this.handleChange}
+          
         />
-        {/* <p className="form-category"></p>
-        <input
-          name="listItem2"
-          placeholder="Spend a Sunday in Dolores Park"
-          type="text"
-          value={this.state.listItem2}
-          onChange={this.handleChange}
-        />
-        <p className="form-category"></p>
-        <input
-          name="listItem3"
-          placeholder="Cruise Lombard Street"
-          type="text"
-          value={this.state.listItem3}
-          onChange={this.handleChange}
-        /> */}
-        {/* <p className="form-category"></p>
-        <input
-          name="listItem4"
-          placeholder="Watch fog roll in at Twin Peaks"
-          type="text"
-          value={this.state.listItem4}
-          onChange={this.handleChange}
-        />
-        <p className="form-category"></p>
-        <input
-          name="listItem5"
-          placeholder="Castro!"
-          type="text"
-          value={this.state.listItem5}
-          onChange={this.handleChange}
-        />
-        <p className="form-category"></p>
-        <input
-          name="listItem6"
-          placeholder="SF Pride last week of June"
-          type="text"
-          value={this.state.listItem2}
-          onChange={this.handleChange}
-        />  */}
 
-        <button className="form-button">Save</button>
+          <button
+          className="form-button"
+          onSubmit={(e) => {
+            e.preventDefault();
+            this.props.handleLocationSubmit(this.state.tasks);
+            // this.props.handleLocationSubmit(this.props.locationId, this.state.tasks);    
+          
+          
+          }}>Create New Yearning</button>
+
+
+        {/* ///////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////      */}
+
+
+
+        <button className="form-button">Save New Location</button>
       </form>
     );
   }

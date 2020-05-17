@@ -13,7 +13,7 @@
   text-decoration: none;
   font-weight: 700;
   letter-spacing: 2px;
-  color: #b63838;
+  color: #1f2031;
 }
 a:hover {
   color: #fdf7f7;
@@ -58,7 +58,6 @@ a:hover {
     margin-left: 10px;
   }
   .nav-link a {
-    color: black;
     font-size: 18px;
   }
 }

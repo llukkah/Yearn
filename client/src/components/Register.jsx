@@ -56,7 +56,7 @@ export default class Register extends Component {
           value={password}
           onChange={this.handleChange}
         />
-        <button className="form-button">Submit</button>
+        <button className="form-button">Register</button>
       </form>
     );
   }

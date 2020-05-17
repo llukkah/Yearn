@@ -8,6 +8,7 @@ import {
   postLocation,
   putLocation,
   destroyLocation,
+  destroyTask
 } from "../services/api-helper";
 import About from "./About";
 import Home from "./Home";
@@ -45,19 +46,10 @@ export default class Main extends Component {
     }));
   };
 
-  // handleLocationUpdate = async (id, locationData) => {
-  //   const updatedLocation = await putLocation(id, locationData);
-  //   this.setState((prevState) => ({
-  //     locations: prevState.locations.map((location) => {
-  //       return location.id === id ? updatedLocation : location;
-  //     }),
-  //   }));
-  // };
-
   handleLocationUpdate = async (id, locationData) => {
     const updatedLocation = await putLocation(id, locationData);
     this.setState((prevState) => ({
-      locations: prevState.locations.map(location => {
+      locations: prevState.locations.map((location) => {
         return location.id === id ? updatedLocation : location;
       }),
     }));
@@ -71,6 +63,43 @@ export default class Main extends Component {
       }),
     }));
   };
+
+
+
+  handleTaskDelete = async (locationId, taskId) => {
+    await destroyTask(locationId, taskId);
+    // this.setState((prevState) => ({
+    //   locations: prevState.locations.filter((location) => {
+    //     return location.id !== id;
+    //   }),
+    // }));
+  };
+  //======================================
+  //============== Tasks ==============
+  //======================================
+  //delete  1 task
+
+  // handleTaskDelete = async (id) => {
+  //   await destroyFood(id);
+  //   this.setState(prevState => ({
+  //     foods: prevState.foods.filter(food => {
+  //       return food.id !== id
+  //     })
+  //   }))
+  // }
+
+  //update task
+
+  // handleFoodUpdate = async (id, foodData) => {
+  //   const updatedFood = await putFood(id, foodData);
+  //   this.setState(prevState => ({
+  //     foods: prevState.foods.map(food => {
+  //       return food.id === id ? updatedFood : food
+  //     })
+  //   }))
+  // }
+
+  //create 1 task
 
   //call for login register and verify
   setLocationData = async (authData, authFN) => {
@@ -144,35 +173,24 @@ export default class Main extends Component {
             );
           }}
         />
-        {/* locations/id/edit.... update location component */}
-        {/* <Route
+
+        <Route
           path="/locations/:id/edit"
           render={(props) => {
-            
             const { id } = props.match.params;
             return (
               <LocationUpdate
                 {...props}
-                locationId={id}
-                locations={this.state.locations}
                 handleLocationUpdate={this.handleLocationUpdate}
+                locationId={id}
+                currentUser={this.props.currentUser}
+                handleLocationSubmit={this.handleLocationSubmit}
+                handleLocationDelete={this.handleLocationDelete}
+                handleTaskDelete={this.handleTaskDelete}
               />
             );
           }}
-        /> */}
-        <Route path="/locations/:id/edit" render={(props) => {
-          const { id } = props.match.params;
-         return (<LocationUpdate
-         {...props}
-         handleLocationUpdate={this.handleLocationUpdate}
-         locationId={id}
-         currentUser={this.props.currentUser}
-          />
-         )
-        }}/>
-
-
-
+        />
       </main>
     );
   }

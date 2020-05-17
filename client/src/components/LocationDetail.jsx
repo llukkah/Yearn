@@ -3,7 +3,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./LocationDetail.css";
 
-export default function Nav(props) {
+// export default function Nav(props) {
+  export default function LocationDetail(props) {
   return (
     <>
       {props.locations
