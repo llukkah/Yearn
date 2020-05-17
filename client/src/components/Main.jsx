@@ -8,7 +8,8 @@ import {
   postLocation,
   putLocation,
   destroyLocation,
-  destroyTask
+  destroyTask,
+  postTask,
 } from "../services/api-helper";
 import About from "./About";
 import Home from "./Home";
@@ -65,41 +66,27 @@ export default class Main extends Component {
   };
 
 
-
-  handleTaskDelete = async (locationId, taskId) => {
-    await destroyTask(locationId, taskId);
-    // this.setState((prevState) => ({
-    //   locations: prevState.locations.filter((location) => {
-    //     return location.id !== id;
-    //   }),
-    // }));
-  };
   //======================================
-  //============== Tasks ==============
+  //================= Tasks ==============
   //======================================
   //delete  1 task
+  
+    handleTaskDelete = async (locationId, taskId) => {
+      await destroyTask(locationId, taskId);
+    };
 
-  // handleTaskDelete = async (id) => {
-  //   await destroyFood(id);
-  //   this.setState(prevState => ({
-  //     foods: prevState.foods.filter(food => {
-  //       return food.id !== id
-  //     })
-  //   }))
-  // }
+    //create 1 task
+  handleTaskSubmit = async (taskData) => {
+    const newTask = await postTask(taskData);
+    this.setState((prevState) => ({
+      tasks: [...prevState.tasks, newTask],
+    }));
+  };
 
-  //update task
 
-  // handleFoodUpdate = async (id, foodData) => {
-  //   const updatedFood = await putFood(id, foodData);
-  //   this.setState(prevState => ({
-  //     foods: prevState.foods.map(food => {
-  //       return food.id === id ? updatedFood : food
-  //     })
-  //   }))
-  // }
 
-  //create 1 task
+
+
 
   //call for login register and verify
   setLocationData = async (authData, authFN) => {
@@ -187,6 +174,7 @@ export default class Main extends Component {
                 handleLocationSubmit={this.handleLocationSubmit}
                 handleLocationDelete={this.handleLocationDelete}
                 handleTaskDelete={this.handleTaskDelete}
+                handleTaskSubmit={this.handleTaskSubmit}
               />
             );
           }}

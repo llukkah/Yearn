@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./LocationCreate.css";
+import { postTask } from "../services/api-helper";
 
 export default class LocationCreate extends Component {
   state = {
@@ -24,6 +25,14 @@ export default class LocationCreate extends Component {
       [name]: value,
     });
   };
+
+  // handleTaskSubmit = async (taskData) => {
+  //   const newTask = await postTask(taskData);
+  //   this.setState((prevState) => ({
+  //     tasks: [...prevState.tasks, newTask],
+  //   }));
+  // };
+
 
   render() {
     return (
@@ -93,32 +102,19 @@ export default class LocationCreate extends Component {
         <p>{this.state.tasks.listItem}</p>
         <input
           className="form-category-details"
-          name="tasks"
-          placeholder="Walk the Golden Gate Bridge"
+          placeholder="none"
           type="text"
-          // value={this.state.listItem}
+          name="tasks"
           value={this.state.tasks}
           onChange={this.handleChange}
-          
         />
-
-          <button
-          className="form-button"
-          onSubmit={(e) => {
-            e.preventDefault();
-            this.props.handleLocationSubmit(this.state.tasks);
-            // this.props.handleLocationSubmit(this.props.locationId, this.state.tasks);    
-          
-          
-          }}>Create New Yearning</button>
-
-
-        {/* ///////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////      */}
+        {/* <button
+        className="form-button"
+        onSubmit={(e) => {
+          e.preventDefault();
+          this.props.handleTaskSubmit(taskData);  
+        
+        }}>Create New Yearning</button> */}
 
 
 

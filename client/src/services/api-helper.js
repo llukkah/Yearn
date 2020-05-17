@@ -92,7 +92,16 @@ export const destroyLocation = async (locationId) => {
   return resp.data;
 };
 
+// ========================================
+// ============== task s===================
+// ========================================
+
 export const destroyTask = async (locationId, taskId) => {
   const resp = await api.delete(`/locations/${locationId}/tasks/${taskId}`);
+  return resp.data;
+};
+
+export const postTask = async (locationId, taskData) => {
+  const resp = await api.post(`/locations/${locationId}/tasks/`, taskData);
   return resp.data;
 };

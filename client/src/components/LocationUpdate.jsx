@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./LocationCreate.css";
 import "./LocationUpdate.css";
 import { Link } from "react-router-dom";
-import { getOneLocation, destroyTask } from "../services/api-helper";
+import { getOneLocation, destroyTask, postTask } from "../services/api-helper";
 
 export default class LocationUpdate extends Component {
   state = {
@@ -13,14 +13,10 @@ export default class LocationUpdate extends Component {
     activityDetails: "",
     tasks: [],
     user_id: this.props.currentUser.id,
+    listItem: "",
   };
 
   componentDidMount() {
-    // let user_id = this.props.currentUser.id;
-    // this.setState({
-    //   user_id: user_id,
-    // });
-
     this.setFormData();
   }
 
@@ -30,6 +26,14 @@ export default class LocationUpdate extends Component {
       tasks: prevState.tasks.filter((task) => {
         return task.id !== taskId;
       }),
+    }));
+  };
+
+
+  handleTaskSubmit = async (locationId, taskData) => {
+    const newTask = await postTask(locationId, taskData);
+    this.setState((prevState) => ({
+      tasks: [...prevState.tasks, newTask],
     }));
   };
 
@@ -120,36 +124,22 @@ export default class LocationUpdate extends Component {
         ///////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////
         /////////////////////////////////////////////////////// */}
-
+{/* 
         <input
           className="form-category-details"
           placeholder="none"
           type="text"
-          name="tasks"
-          value={this.state.tasks}
+          name="taskField"
+          value={this.state.taskField}
           onChange={this.handleChange}
         />
         <button
         className="form-button"
         onSubmit={(e) => {
           e.preventDefault();
-          this.props.handleLocationSubmit(this.props.locationId, this.state);
-          // this.props.handleLocationSubmit(this.props.locationId, this.state.tasks);    
+          this.handleTaskSubmit(this.props.locationId, this.state);  
         
-        
-        }}>Create New Yearning</button>
-
-
-
-
-
-{/* 
-        ///////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////
-        /////////////////////////////////////////////////////// */}
+        }}>Create New Yearning</button> */}
 
         <button className="form-button">Save Location and Yearnings</button>
       </form>
