@@ -93,7 +93,7 @@ export const destroyLocation = async (locationId) => {
 };
 
 // ========================================
-// ============== task s===================
+// ============== tasks ===================
 // ========================================
 
 export const destroyTask = async (locationId, taskId) => {

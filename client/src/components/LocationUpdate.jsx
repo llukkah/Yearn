@@ -104,7 +104,7 @@ export default class LocationUpdate extends Component {
           onChange={this.handleChange}
         />
 
-        <p className="form-category">Bucket List Items</p>
+        <p className="form-category">Yearnings</p>
         {this.state.tasks.map((task) => (
           <div className="bucket-list-div">
             <p className="bucket-list-item">{task.listItem} 
