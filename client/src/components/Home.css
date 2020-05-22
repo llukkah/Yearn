@@ -6,57 +6,92 @@
   color: #fdf7f7;
   letter-spacing: 0.2em;
 }
-
 .hero-text-find {
   position: absolute;
   top: 15%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 .hero-text-your {
   position: absolute;
   top: 31.5%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 .hero-text-saturday {
   position: absolute;
   top: 48%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-/* ----------- iPhone X  iPhone 6/7/8 Plus ----------- */
-
-/* Portrait and Landscape */
-@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
-  .hero-text {
-    font-size: 60px;
-  }
+/* /////////////////////////////////////// */
+/* /////////////////////////////////////// */
+/* 769px — 1024px: Small screens, laptops  */
+/* /////////////////////////////////////// */
+/* /////////////////////////////////////// */
+@media (max-width: 815px) {
   .hero-text-find {
     top: 25%;
   }
+  .hero-text {
+    font-size: 66px;
+  }
   .hero-text-your {
-    top: 35%;
+    top: 40%;
   }
   .hero-text-saturday {
-    top: 45%;
+    top: 55%;
   }
 }
-/* IPAD */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
-  .hero-text {
-    font-size: 60px;
-  }
+/* /////////////////////////////////////// */
+/* /////////////////////////////////////// */
+/* //// 481px — 768px: iPads, Tablets //// */
+/* /////////////////////////////////////// */
+/* /////////////////////////////////////// */
+@media (max-width: 760px) {
   .hero-text-find {
-    top: 10%;
+    top: 25%;
+  }
+  .hero-text {
+    font-size: 66px;
   }
   .hero-text-your {
-    top: 20%;
+    top: 40%;
   }
   .hero-text-saturday {
+    top: 55%;
+  }
+}
+@media (max-width: 575px) {
+  .hero-text-find {
     top: 30%;
+  }
+  .hero-text {
+    font-size: 66px;
+  }
+  .hero-text-your {
+    top: 43%;
+  }
+  .hero-text-saturday {
+    top: 55%;
+  }
+}
+/* /////////////////////////////////////// */
+/* /////////////////////////////////////// */
+/* //// 320px — 480px: Mobile devices ////  */
+/* /////////////////////////////////////// */
+/* /////////////////////////////////////// */
+@media (max-width: 390px) {
+  .hero-text-find {
+    top: 35%;
+  }
+  .hero-text-your {
+    top: 48%;
+  }
+  .hero-text-saturday {
+    top: 61%;
+  }
+  .hero-text {
+    font-size: 40px;
   }
 }

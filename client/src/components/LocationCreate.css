@@ -57,27 +57,34 @@ button {
   text-decoration: none;
   font-size: 16px;
 }
-
-/* ----------- iPhone X  iPhone 6/7/8 Plus ----------- */
-
-/* Portrait and Landscape */
-@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+/* /////////////////////////////////////// */
+/* /////////////////////////////////////// */
+/* //// 481px — 768px: iPads, Tablets //// */
+/* /////////////////////////////////////// */
+/* /////////////////////////////////////// */
+@media (max-width: 760px) {
   form {
-    top: 40%;
-    width: 300px;
-  }
-  input {
-    width: 250px;
-  }
-  .form-category {
-    padding-left: 20px;
+    height: 400px;
+    width: 400px;
+    margin-top: 150px;
   }
 }
-
-/*----------- IPAD PRO -------- */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+@media (max-width: 745px) {
   form {
-    margin-top: 0px;
-    top: 30%;
+    margin-top: 200px;
+  }
+}
+/* /////////////////////////////////////// */
+/* /////////////////////////////////////// */
+/* //// 320px — 480px: Mobile devices ////  */
+/* /////////////////////////////////////// */
+/* /////////////////////////////////////// */
+@media (max-width: 420px) {
+  form {
+max-width: 400px;
+  }
+  input {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
